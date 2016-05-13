@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h3>Create Employee</h3>
+</div>
+
+<form method="post" style="margin: 5% 0 0">
+    <div class="float-left">
+        <p>ID</p>
+        <p>Firstname</p>
+        <p>Lastname</p>
+        <p>Phonenumber</p>
+    </div>
+    <div class="float-right">
+        <input type="text" style="margin: 1px 0 2px" name="id" /><br />
+        <input type="text" style="margin: 1px 0 2px" name="firstname" /><br />
+        <input type="text" style="margin: 1px 0 2px" name="lastname" /><br />
+        <input type="text" style="margin: 1px 0 2px" name="phonenumber" /><br />
+        <input type="submit" value="Save" />
+    </div>
+</form>
+
+<div>
+    <p>
+        @if (ViewBag.Submitted)
+        {
+            // If the form was submitted
+            @ViewBag.Message
+        }
+    </p>
+</div>

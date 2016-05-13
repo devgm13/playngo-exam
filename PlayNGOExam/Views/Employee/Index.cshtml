@@ -1,0 +1,37 @@
+﻿@model IEnumerable<PlayNGOExam.Models.Employee>
+
+@{
+    ViewBag.Title = "All Employees";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Showing All Employees</h2>
+
+<p><a href="~/Employee/Create">Create New Employee</a></p>
+<table class="employees-table">
+    <tr>
+        <th>ID</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Phonenumber</th>
+        <th>Actions</th>
+    </tr>
+
+    @if (Model != null && Model.Count() > 0)
+    {
+        foreach (var employee in Model)
+        {
+            <tr>
+                <td>@employee.ID</td>
+                <td>@employee.Firstname</td>
+                <td>@employee.Lastname</td>
+                <td>@employee.Phonenumber</td>
+                <td>
+                    <a href="~/Employee/Update/@employee.ID">Update</a>
+                    <a href="~/Employee/Delete/@employee.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    }
+</table>
+
